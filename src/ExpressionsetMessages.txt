@@ -1,0 +1,96 @@
+## OBJETS LITTÉRAUX
+
+'Hello, Dave' : String
+1.3 : Float
+#node1 : Symbol
+#(2 33 4) : Array
+[ :each | each scale: 1.5 ] : Block Closure
+$A : Character
+true : Booleans
+1 : Smallinteger
+
+
+
+## MESSAGES
+
+3 + 4 
+
+	Receiveur : 3
+	Selecteur du message : +
+	Argument(s) : 4
+	Résultat retourné par l’exécution de l’expression : 7 
+
+Date today 
+
+	Receiveur : Date
+	Selecteur du message : today
+	Argument(s) : none
+	Résultat retourné par l’exécution de l’expression : 23 January 2021
+
+anArray at: 1 put: 'hello' 
+
+	Receiveur : anArray
+	Selecteur du message : at: put:
+	Argument(s) : 1
+		      'hello'
+	Résultat retourné par l’exécution de l’expression : error
+
+anArray at: i
+
+	Receiveur : anArray
+	Selecteur du message : at:
+	Argument(s) : i
+	Résultat retourné par l’exécution de l’expression : error
+
+#(2 33 -4 67) collect: [ :each | each abs ]
+
+	Receiveur : #(2 33 -4 67)
+	Selecteur du message : collect:
+	Argument(s) : [ :each | each abs ]
+	Résultat retourné par l’exécution de l’expression : #(2 33 4 67)
+
+25 @ 50 
+
+	Receiveur : 25
+	Selecteur du message : @
+	Argument(s) : 50
+	Résultat retourné par l’exécution de l’expression : (25@50)
+
+SmallInteger maxVal
+
+	Receiveur : SmallInteger
+	Selecteur du message : maxVal
+	Argument(s) : none
+	Résultat retourné par l’exécution de l’expression : 1152921504606846975
+
+#(a b c d e f) includesAll: #(f d b)
+
+	Receiveur : #(a b c d e f)
+	Selecteur du message : includesAll:
+	Argument(s) : #(f d b)
+	Résultat retourné par l’exécution de l’expression : true
+
+true | false 
+
+	Receiveur : true
+	Selecteur du message : |
+	Argument(s) : false
+	Résultat retourné par l’exécution de l’expression : true
+
+Point selectors 
+
+	Receiveur : Point
+	Selecteur du message : selectors
+	Argument(s) : none
+	Résultat retourné par l’exécution de l’expression : #(#distanceTo: #corner: #rectangle: #normalized #fourNeighbors #bearingToPoint: 					#deepCopy #leftRotated #asMargin #reflectedAbout: #rotateBy:centerAt: #scaleFrom:to: #squaredDistanceTo: 					#normal #fromSton: #flipBy:centerAt: #to:intersects:to: #roundTo: #asIntegerPoint #min #setR:degrees: 					#interpolateTo:at: #storeOn: #y #< #ceiling #scaleTo: #nearestPointAlongLineFrom:to: #- #asPoint 					#asNonFractionalPoint #transposed #floor #grid: #fourDirections #roundUpTo: #insideTriangle:with:with: #'>=' 					#extent: #sign #sortsBefore: #guarded #isInsideCircle:with:with: #negated #fuelAccept: #'\\' 					#adaptToNumber:andSend: #isZero #onLineFrom:to: #isFloatPoint #printOn: #r #dotProduct: #min:max: #+ 					#scaledByDisplayScaleFactor #rightRotated #stonOn: #angle #truncateTo: #octantOf: #/ #theta 					#directionToLineFrom:to: #isPoint #asFloatPoint #eightNeighbors #quadrantOf: #isIntegerPoint #to:sideOf: 					#nearestPointOnLineFrom:to: #crossProduct: #setX:setY: #dist: #degrees #triangleArea:with: #'//' #hash 					#isSelfEvaluating #'<=' #truncated #abs #min: #rounded #x #onLineFrom:to:within: #max: #veryDeepCopyWith: #= 					#adhereTo: #bitShiftPoint: #angleWith: #* #max #adaptToCollection:andSend: #scaleBy: #sideOf: #roundDownTo: #> 					#closeTo: #translateBy: #reciprocal #rotateBy:about:)
+
+
+
+## NOMMAGE
+
+Transferator : est une variable globale : 
+		soit une classe, une variable globale ou une variable de classe.
+
+Rectangle : est une variable locale : 
+		soit une variable temporaire, une variable d’instance, un argument de méthode.
+

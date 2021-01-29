@@ -34,6 +34,11 @@ EConstant >> negated [
 ]
 
 { #category : #accessing }
+EConstant >> printOn: aStream [
+	aStream nextPutAll: value printString
+]
+
+{ #category : #accessing }
 EConstant >> value: anInteger [
 	value := anInteger
 ]

@@ -23,3 +23,9 @@ ENegation >> evaluate [
 ENegation >> expression: anExpression [
 	expression := anExpression
 ]
+
+{ #category : #accessing }
+ENegation >> printOn: aStream [
+	aStream nextPutAll: '- '.
+	expression  printOn: aStream
+]

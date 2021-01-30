@@ -10,10 +10,11 @@ Class {
 { #category : #initialization }
 DieHandle >> + aDieHandle [
 	
-	|handle d|
+	| handle |
 	handle := DieHandle new.
-	d := self dice,aDieHandle dice.
-	^ d
+	handle dice addAll: self dice.
+	handle dice addAll: aDieHandle dice.
+	^ handle
 ]
 
 { #category : #initialization }

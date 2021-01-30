@@ -29,8 +29,7 @@ Integer >> D: anInteger [
 
 	| handle |
 	handle := DieHandle new.
-	handle addDie: (Die new withFaces: anInteger).
-	handle addDie: (Die new withFaces: anInteger).
+	self timesRepeat: [handle addDie: (Die new withFaces: anInteger)].
 	^ handle
 		
 ]

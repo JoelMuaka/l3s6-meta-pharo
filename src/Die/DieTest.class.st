@@ -1,7 +1,7 @@
 Class {
 	#name : #DieTest,
 	#superclass : #TestCase,
-	#category : #'Die-Tests'
+	#category : #Die
 }
 
 { #category : #tests }

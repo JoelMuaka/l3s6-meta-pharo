@@ -1,10 +1,6 @@
 Class {
 	#name : #EMultiplication,
-	#superclass : #EExpression,
-	#instVars : [
-		'left',
-		'right'
-	],
+	#superclass : #EBinaryExpression,
 	#category : #Expressions
 }
 
@@ -23,16 +19,8 @@ EMultiplication class >> left: anExp right: anExp2 [
 ]
 
 { #category : #accessing }
-EMultiplication >> evaluate [
-	| e1 e2|
-	e1 := left evaluate.
-	e2 := right evaluate.
-	^ e1 * e2
-]
-
-{ #category : #accessing }
-EMultiplication >> left: anExpression [
-	left := anExpression
+EMultiplication >> evaluateWith: anObject [
+	^ (right evaluateWith: anObject) * (left evaluateWith: anObject)
 ]
 
 { #category : #accessing }
@@ -41,16 +29,6 @@ EMultiplication >> negated [
 ]
 
 { #category : #accessing }
-EMultiplication >> printOn: aStream [
-	aStream
-		nextPutAll: '( ';
-		nextPutAll: left printString;
-		nextPutAll: ' * ';
-		nextPutAll: right printString;
-		nextPutAll: ' )'
-]
-
-{ #category : #accessing }
-EMultiplication >> right: anExpression [
-	right := anExpression
+EMultiplication >> operatorString [
+	^ ' * '
 ]

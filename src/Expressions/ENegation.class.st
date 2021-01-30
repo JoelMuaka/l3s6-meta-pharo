@@ -25,6 +25,13 @@ ENegation >> expression: anExpression [
 ]
 
 { #category : #accessing }
+ENegation >> negated [
+	|d|
+	d := ENegation new expression: self.
+	^ d
+]
+
+{ #category : #accessing }
 ENegation >> printOn: aStream [
 	aStream nextPutAll: '- '.
 	expression  printOn: aStream

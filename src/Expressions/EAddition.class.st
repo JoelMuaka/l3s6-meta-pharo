@@ -42,11 +42,12 @@ EAddition >> negated [
 
 { #category : #accessing }
 EAddition >> printOn: aStream [
-	aStream nextPutAll: '( '.
-	left printOn: aStream.
-	aStream nextPutAll: ' + '.
-	right printOn: aStream.
-	aStream nextPutAll: ' )'
+	aStream
+		nextPutAll: '( ';
+		nextPutAll: left printString;
+		nextPutAll: ' + ';
+		nextPutAll: right printString;
+		nextPutAll: ' )'
 ]
 
 { #category : #accessing }

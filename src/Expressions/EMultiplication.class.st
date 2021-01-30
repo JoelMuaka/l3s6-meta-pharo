@@ -41,6 +41,16 @@ EMultiplication >> negated [
 ]
 
 { #category : #accessing }
+EMultiplication >> printOn: aStream [
+	aStream
+		nextPutAll: '( ';
+		nextPutAll: left printString;
+		nextPutAll: ' * ';
+		nextPutAll: right printString;
+		nextPutAll: ' )'
+]
+
+{ #category : #accessing }
 EMultiplication >> right: anExpression [
 	right := anExpression
 ]

@@ -8,6 +8,12 @@ Class {
 }
 
 { #category : #accessing }
+Die >> + aDicable [
+	
+	^ aDicable sumWithDie: self
+]
+
+{ #category : #accessing }
 Die >> faces [
 	^faces
 ]
@@ -40,6 +46,24 @@ Die >> roll [
 	| number |
 	number := 6 atRandom.
 	^ number
+]
+
+{ #category : #accessing }
+Die >> sumWithDie: aDie [
+	
+	^ DieHandle new
+	  addDie: self;
+	  addDie: aDie; yourself
+]
+
+{ #category : #accessing }
+Die >> sumWithHandle: aDieHandle [
+	
+	| handle |
+	handle := DieHandle  new.
+	aDieHandle dice do: [ :each | handle addDie: each ].
+	handle addDie: self.
+	^ handle
 ]
 
 { #category : #accessing }

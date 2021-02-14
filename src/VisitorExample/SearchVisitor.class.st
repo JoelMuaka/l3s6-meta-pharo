@@ -8,39 +8,34 @@ Class {
 }
 
 { #category : #accessing }
-SearchVisitor >> token: aToken [ [
+SearchVisitor >> token: aToken [
 	token := aToken
-]
 ]
 
 { #category : #accessing }
-SearchVisitor >> visitLiteralNode: aNode [ [
+SearchVisitor >> visitLiteralNode: aNode [
 	^ (aNode value asString beginsWith: token)
 		ifTrue: [ { aNode } ]
 		ifFalse: [ #() ]
 ]
-]
 
 { #category : #accessing }
-SearchVisitor >> visitMessageNode: aNode [ [
+SearchVisitor >> visitMessageNode: aNode [
 	^ (aNode receiver acceptVisitor: self),
 	((aNode selector beginsWith: token)
 		ifTrue: [ { aNode } ]
 		ifFalse: [ #() ]),
 		(aNode arguments gather: [ :each | each acceptVisitor: self ])
 ]
-]
 
 { #category : #accessing }
-SearchVisitor >> visitNode: aNode [ [
+SearchVisitor >> visitNode: aNode [
 	^ aNode children gather: [ :each | each acceptVisitor: self ]
 ]
-]
 
 { #category : #accessing }
-SearchVisitor >> visitVariableNode: aNode [ [
+SearchVisitor >> visitVariableNode: aNode [
 	^ (aNode name beginsWith: token)
 		ifTrue: [ { aNode } ]
 		ifFalse: [ #() ]
-]
 ]

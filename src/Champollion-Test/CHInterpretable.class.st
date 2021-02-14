@@ -5,49 +5,41 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-CHInterpretable >> returnBoolean [ [
+CHInterpretable >> returnBoolean [
 	^ false
 ]
-]
 
 { #category : #'as yet unclassified' }
-CHInterpretable >> returnEmptyLiteralArray [ [
+CHInterpretable >> returnEmptyLiteralArray [
 	^ #()
 ]
-]
 
 { #category : #'as yet unclassified' }
-CHInterpretable >> returnFloat [ [
+CHInterpretable >> returnFloat [
 	^ 3.14
 ]
-]
 
 { #category : #'as yet unclassified' }
-CHInterpretable >> returnInteger [ [
+CHInterpretable >> returnInteger [
 	^ 5
 ]
-]
 
 { #category : #'as yet unclassified' }
-CHInterpretable >> returnRecursiveLiteralArray [ [
+CHInterpretable >> returnRecursiveLiteralArray [
 	^ #(true 1 #('ahah'))
 ]
-]
 
 { #category : #'as yet unclassified' }
-CHInterpretable >> returnSelf [ [
+CHInterpretable >> returnSelf [
 	^ self
 ]
-]
 
 { #category : #'as yet unclassified' }
-CHInterpretable >> returnSuper [ [
+CHInterpretable >> returnSuper [
 	^ super
 ]
-]
 
 { #category : #'as yet unclassified' }
-CHInterpretable >> visitSelfNode: aNode [ [
+CHInterpretable >> visitSelfNode: aNode [
 	^ self receiver
-]
 ]

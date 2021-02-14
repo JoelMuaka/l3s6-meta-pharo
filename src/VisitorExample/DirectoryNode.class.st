@@ -8,13 +8,11 @@ Class {
 }
 
 { #category : #visiting }
-DirectoryNode >> acceptVisitor: aVisitor [ [
+DirectoryNode >> acceptVisitor: aVisitor [
 	^ aVisitor visitDirectoryNode: self
-]
 ]
 
 { #category : #accessing }
-DirectoryNode >> size [ [
+DirectoryNode >> size [
 	^ children sum: [ :each | each size ]
-]
 ]

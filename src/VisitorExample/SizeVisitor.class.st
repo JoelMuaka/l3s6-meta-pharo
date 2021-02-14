@@ -5,13 +5,11 @@ Class {
 }
 
 { #category : #visiting }
-SizeVisitor >> visitDirectoryNode: aDirectoryNode [ [
+SizeVisitor >> visitDirectoryNode: aDirectoryNode [
 	^ aDirectoryNode children sum: [ :each | each acceptVisitor: self ]
-]
 ]
 
 { #category : #visiting }
-SizeVisitor >> visitFileNode: aFileNode [ [
+SizeVisitor >> visitFileNode: aFileNode [
 	^ aFileNode size
-]
 ]

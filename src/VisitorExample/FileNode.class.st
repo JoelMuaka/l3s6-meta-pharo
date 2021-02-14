@@ -8,13 +8,11 @@ Class {
 }
 
 { #category : #accessing }
-FileNode >> acceptVisitor: aVisitor [ [
+FileNode >> acceptVisitor: aVisitor [
 	^ aVisitor visitFileNode: self
-]
 ]
 
 { #category : #accessing }
-FileNode >> size [ [
+FileNode >> size [
 	^ size
-]
 ]

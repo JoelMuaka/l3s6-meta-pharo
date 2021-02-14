@@ -8,66 +8,56 @@ Class {
 }
 
 { #category : #running }
-CHInterpreter >> execute: anAST [ [
+CHInterpreter >> execute: anAST [
 	^ self visitNode: anAST
-]
 ]
 
 { #category : #accessing }
-CHInterpreter >> execute: anAST withReceiver: anObject [ [
+CHInterpreter >> execute: anAST withReceiver: anObject [
 	receiver := anObject.
 	^ self visitNode: anAST
 ]
-]
 
 { #category : #accessing }
-CHInterpreter >> receiver [ [
+CHInterpreter >> receiver [
 	^ receiver
-]
 ]
 
 { #category : #running }
-CHInterpreter >> visitLiteralArrayNode: aLiteralArrayNode [ [
+CHInterpreter >> visitLiteralArrayNode: aLiteralArrayNode [
 	^ aLiteralArrayNode contents
 		collect: [ :literalNode | self visitNode: literalNode ]
 		as: Array
 ]
-]
 
 { #category : #running }
-CHInterpreter >> visitLiteralValueNode: aLiteralValueNode [ [
+CHInterpreter >> visitLiteralValueNode: aLiteralValueNode [
 	^ aLiteralValueNode value
 ]
-]
 
 { #category : #running }
-CHInterpreter >> visitMethodNode: aMethodNode [ [
+CHInterpreter >> visitMethodNode: aMethodNode [
 	^ self visitNode: aMethodNode body
 ]
-]
 
 { #category : #running }
-CHInterpreter >> visitNode: aNode [ [
+CHInterpreter >> visitNode: aNode [
 	^ aNode acceptVisitor: self
 ]
-]
 
 { #category : #running }
-CHInterpreter >> visitReturnNode: aReturnNode [ [
+CHInterpreter >> visitReturnNode: aReturnNode [
 	^ self visitNode: aReturnNode value
 ]
-]
 
 { #category : #running }
-CHInterpreter >> visitSequenceNode: aSequenceNode [ [
+CHInterpreter >> visitSequenceNode: aSequenceNode [
 	"Visit all but the last statement without caring about the result"
 	aSequenceNode statements allButLast do: [ :each | self visitNode: each ].
 	^ self visitNode: aSequenceNode statements last
 ]
-]
 
 { #category : #running }
-CHInterpreter >> visitSuperNode: aNode [ [
+CHInterpreter >> visitSuperNode: aNode [
 	^ self receiver
-]
 ]

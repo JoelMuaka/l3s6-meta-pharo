@@ -7,6 +7,12 @@ Class {
 	#category : #'myBecher-MetaASTVisitor'
 }
 
+{ #category : #initialization }
+CountingManualInterpreter >> initialize [
+	super initialize.
+	count := 0.
+]
+
 { #category : #visiting }
 CountingManualInterpreter >> visitArrayNode: aRBArrayNode [
 	^ self
